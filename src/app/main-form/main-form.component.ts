@@ -20,6 +20,7 @@ export class MainFormComponent implements OnInit {
   ngOnInit(): void {
     this.email = {from: "", to: "", subject: "", body: ""};
     this.emailList = [];
+    
   }
 
   submitEmail(): void {
