@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { email } from '../interfaces/email';
+import { email } from '../../interfaces/email';
 import { ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-main-form',
-  templateUrl: './main-form.component.html',
-  styleUrls: ['./main-form.component.css']
+  selector: 'app-email-form',
+  templateUrl: './email-form.component.html',
+  styleUrls: ['./email-form.component.css']
 })
 
-export class MainFormComponent implements OnInit {
+export class EmailFormComponent implements OnInit {
 
   email: email;
   emailsList: email[];

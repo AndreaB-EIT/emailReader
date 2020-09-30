@@ -1,0 +1,37 @@
+<div class="my-5"> <!-- should be okay -->
+    <h3>Emails list</h3>
+
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Subject</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor="let email of emailsList; index as i"> useful
+            <th scope="row">{{ i + 1 }}</th> -->
+        <tr *ngFor="let email of emailsList">
+            <td>{{ email.from }}</td>
+            <td>{{ email.to }}</td>
+            <td>{{ email.subject }}</td>
+            <td>
+                <!--<button routerLink = "/emailViewer"
+                        [queryParams] = "{ 'from': email.from, 'to': email.to, 'subject': email.subject, 'body': email.body }">
+                    h
+                </button>-->
+                <button>
+                    <!--<a routerLink="/emailViewer" queryParams = "{ 'from': email.from, 'to': email.to, 'subject': email.subject, 'body': email.body }">View email</a>-->
+                    <a [routerLink]="['/emailViewer']" [queryParams] = "{ test: 'test' }">View email</a> // use a service please, don't pass every attribute through the URL
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+
+    <div *ngIf="!emailsList.length" class="ml-3">
+        No emails yet!
+    </div>
+</div>
