@@ -1,84 +1,84 @@
 <div class="my-5"> <!-- should be okay -->
-    <h3>Emails list</h3>
+  <h3>Emails list</h3>
 
-    <div class="my-3">
-        <button class="btn btn-primary">
-            <a [routerLink]="['/emailForm']" class="text-white">Compose email</a>
-        </button>
-        <!--<input  type="number"
-                min="0"
-                [max]="emailsList.length-1"
-                [(ngModel)]="IDToDelete"
-                name="IDToDelete"
-                 />
+  <div class="my-3">
+    <button class="btn btn-primary">
+      <a [routerLink]="['/emailForm']" class="text-white">Compose email</a>
+    </button>
+    <!--<input  type="number"
+            min="0"
+            [max]="emailsList.length-1"
+            [(ngModel)]="IDToDelete"
+            name="IDToDelete"
+             />
 
-        <button (click)="deleteEmail(IDToDelete)"
-                disabled="IDToDelete.invalid">
+    <button (click)="deleteEmail(IDToDelete)"
+            disabled="IDToDelete.invalid">
+        Delete email
+    </button>-->
+  </div>
+
+  <div>
+    <label>Filter by words
+      <input type="text"
+             [(ngModel)]="term"
+             name="term"
+      />
+    </label>
+  </div>
+
+  <div>
+
+  </div>
+
+  <div class="my-3">
+    <table class="table table-striped">
+      <thead>
+      <tr class="text-center">
+        <th scope="col">ID</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Subject</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <!-- This redundancy grants better UX, since the user will
+            be able to make sure about deleting the right email,
+            since the same table cell background color might cause
+            confusion -->
+        <th scope="col">ID</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- <tr *ngFor="let email of emailsList; index as i"> useful
+          <th scope="row">{{ i + 1 }}</th> -->
+      <tr *ngFor="let email of emailsList | filter:term"
+          class="text-center">
+        <td>{{ email.id }}</td>
+        <td>{{ email.from }}</td>
+        <td>{{ email.to }}</td>
+        <td>{{ email.subject }}</td>
+        <td>
+          <button (click)="viewEmail(email.id)"
+                  class="btn btn-primary">
+            View email
+          </button>
+        </td>
+        <td class="bg-warning">
+          <button (click)="deleteEmail(email.id)"
+                  class="btn btn-danger">
             Delete email
-        </button>-->
-    </div>
+          </button>
+        </td>
+        <!-- See above for an explanation of why this is here -->
+        <td>
+          {{ email.id }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <div>
-        <h5>Filter by words</h5>
-
-        <input  type="text"
-                [(ngModel)]="term"
-                name="term"
-        />
-    </div>
-
-    <div>
-
-    </div>
-
-    <div class="my-3">
-        <table class="table table-striped">
-            <thead>
-                <tr class="text-center">
-                    <th scope="col">ID</th>
-                    <th scope="col">From</th>
-                    <th scope="col">To</th>
-                    <th scope="col">Subject</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <!-- This redundancy grants better UX, since the user will
-                        be able to make sure about deleting the right email,
-                        since the same table cell background color might cause
-                        confusion -->
-                    <th scope="col">ID</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- <tr *ngFor="let email of emailsList; index as i"> useful
-                    <th scope="row">{{ i + 1 }}</th> -->
-                <tr     *ngFor="let email of emailsList | filter:term"
-                        class="text-center">
-                    <td>{{ email.id }}</td>
-                    <td>{{ email.from }}</td>
-                    <td>{{ email.to }}</td>
-                    <td>{{ email.subject }}</td>
-                    <td>
-                        <button (click)="viewEmail(email.id)"
-                                class="btn btn-primary">
-                            View email
-                        </button>
-                    </td>
-                    <td class="bg-warning">
-                        <button (click)="deleteEmail(email.id)"
-                                class="btn btn-danger">
-                            Delete email
-                        </button>
-                    </td>
-                    <!-- See above for an explanation of why this is here -->
-                    <td>
-                        {{ email.id }}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div *ngIf="!emailsList.length" class="ml-3">
-        No emails yet!
-    </div>
+  <div *ngIf="!emailsList.length" class="ml-3">
+    No emails yet!
+  </div>
 </div>

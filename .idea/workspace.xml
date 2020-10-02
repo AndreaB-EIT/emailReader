@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc4958f4-f2cb-47e1-9e06-59e211b3cc5b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/email-form/email-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/email-form/email-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/email-form/email-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/email-form/email-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/email-form/email-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/email-form/email-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/email-viewer/email-viewer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/email-viewer/email-viewer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/email-viewer/email-viewer.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/email-viewer/email-viewer.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/email-viewer/email-viewer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/email-viewer/email-viewer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/emails-list/emails-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/emails-list/emails-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/emails-list/emails-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/emails-list/emails-list.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/emails-list/emails-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/emails-list/emails-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/interfaces/email.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/interfaces/email.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main-form/main-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main-form/main-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main-form/main-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main-form/main-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main-form/main-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main-form/main-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/email-management.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/email-management.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/email-management.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/email-management.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +49,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="ts.external.directory.path" value="C:\Users\Andrea\Desktop\Masters\UPM\ProgrammingUIs\emailReader\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -71,6 +95,7 @@
       <workItem from="1601656877762" duration="97000" />
       <workItem from="1601656985787" duration="35000" />
       <workItem from="1601657112151" duration="494000" />
+      <workItem from="1601657760346" duration="1092000" />
     </task>
     <servers />
   </component>
@@ -78,22 +103,30 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1001" height="143" key="GridCell.Tab.0.bottom" timestamp="1601656771708">
+    <state x="307" y="342" key="#Inspections" timestamp="1601658060471">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1001" height="143" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1601656771708" />
-    <state width="1001" height="143" key="GridCell.Tab.0.center" timestamp="1601656771708">
+    <state x="307" y="342" key="#Inspections/0.0.2048.1112@0.0.2048.1112" timestamp="1601658060471" />
+    <state x="889" y="455" key="#TSLint" timestamp="1601657877952">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1001" height="143" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1601656771708" />
-    <state width="1001" height="143" key="GridCell.Tab.0.left" timestamp="1601656771708">
+    <state x="889" y="455" key="#TSLint/0.0.2048.1112@0.0.2048.1112" timestamp="1601657877952" />
+    <state width="1001" height="139" key="GridCell.Tab.0.bottom" timestamp="1601658490767">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1001" height="143" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1601656771708" />
-    <state width="1001" height="143" key="GridCell.Tab.0.right" timestamp="1601656771708">
+    <state width="1001" height="139" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1601658490767" />
+    <state width="1001" height="139" key="GridCell.Tab.0.center" timestamp="1601658490767">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1001" height="143" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1601656771708" />
+    <state width="1001" height="139" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1601658490767" />
+    <state width="1001" height="139" key="GridCell.Tab.0.left" timestamp="1601658490767">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1001" height="139" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1601658490767" />
+    <state width="1001" height="139" key="GridCell.Tab.0.right" timestamp="1601658490767">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1001" height="139" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1601658490767" />
     <state x="607" y="358" key="SettingsEditor" timestamp="1601657471186">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { email } from '../../interfaces/email';
-import { Router } from '@angular/router';
-import { EmailManagementService } from 'src/app/services/email-management.service';
+import {Component, OnInit} from '@angular/core';
+import {Email} from '../../interfaces/email';
+import {Router} from '@angular/router';
+import {EmailManagementService} from 'src/app/services/email-management.service';
 
 @Component({
   selector: 'app-emails-list',
@@ -10,16 +10,16 @@ import { EmailManagementService } from 'src/app/services/email-management.servic
 })
 export class EmailsListComponent implements OnInit {
 
-  emailToView: email;
-  emailsList: email[];
+  emailsList: Email[];
   IDToDelete: number;
   term: string;
 
   constructor(private router: Router,
-              private EMS: EmailManagementService) { }
+              private EMS: EmailManagementService) {
+  }
 
   ngOnInit(): void {
-    this.term = "";
+    this.term = '';
     this.IDToDelete = 0;
     this.emailsList = this.EMS.getAllEmails();
 

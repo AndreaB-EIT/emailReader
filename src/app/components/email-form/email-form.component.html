@@ -1,69 +1,71 @@
 <form #emailForm="ngForm" (ngSubmit)="submitEmail()">
-    <p>The fields with an asterisk (*) are required.</p>
-    <div class="form-group">
-        <label>From *</label>
-        <input class="form-control mb-2" 
-            type="text" 
-            required 
-            [(ngModel)]="email.from" 
-            name="from" 
-            #from="ngModel" 
-            [ngClass]="from.valid || from.pristine ? '': 'bg-danger text-white'"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+  <p>The fields with an asterisk (*) are required.</p>
+  <div class="form-group">
+    <label>From *
+      <input class="form-control mb-2"
+             type="text"
+             required
+             [(ngModel)]="email.from"
+             name="from"
+             #from="ngModel"
+             [ngClass]="from.valid || from.pristine ? '': 'bg-danger text-white'"
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+    </label>
+    <div class="alert alert-danger" *ngIf="from.touched && !from.valid">
+      <div *ngIf="from.errors.required">Sorry, a sender email is required.</div>
+      <div *ngIf="from.errors.pattern">The sender email does not match the email pattern.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>To *
+    <input class="form-control mb-2"
+           type="text"
+           required
+           [(ngModel)]="email.to"
+           name="to"
+           #to="ngModel"
+           [ngClass]="to.valid || to.pristine ? '': 'bg-danger text-white'"
+           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+    </label>
+    <div class="alert alert-danger" *ngIf="to.touched && !to.valid">
+      <div *ngIf="to.errors.required">Sorry, a receiver email is required.</div>
+      <div *ngIf="to.errors.pattern">The receiver email does not match the email pattern.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Subject *
+      <input class="form-control mb-2"
+             type="text"
+             required
+             [(ngModel)]="email.subject"
+             name="subject"
+             #subject="ngModel"
+             [ngClass]="subject.valid || subject.pristine ? '': 'bg-danger text-white'"
+             pattern="[a-zA-Z0-9. %+-_]{1,50}">
+    </label>
 
-        <div class="alert alert-danger" *ngIf="from.touched && !from.valid">
-            <div *ngIf="from.errors.required">Sorry, a sender email is required.</div>
-            <div *ngIf="from.errors.pattern">The sender email does not match the email pattern.</div>
-        </div>
+    <div class="alert alert-danger" *ngIf="subject.touched && !subject.valid">
+      <div *ngIf="subject.errors.required">Sorry, a subject is required.</div>
+      <div *ngIf="subject.errors.pattern">The subject can't be longer than 50 characters.</div>
     </div>
-    <div class="form-group">
-        <label>To *</label>
-        <input class="form-control mb-2" 
-            type="text" 
-            required 
-            [(ngModel)]="email.to" 
-            name="to" 
-            #to="ngModel" 
-            [ngClass]="to.valid || to.pristine ? '': 'bg-danger text-white'"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+  </div>
+  <div class="form-group">
+    <label>Body
+    <input class="form-control mb-4"
+           type="text"
+           [(ngModel)]="email.body"
+           name="body"
+           #body="ngModel">
+    </label>
+  </div>
 
-        <div class="alert alert-danger" *ngIf="to.touched && !to.valid">
-            <div *ngIf="to.errors.required">Sorry, a receiver email is required.</div>
-            <div *ngIf="to.errors.pattern">The receiver email does not match the email pattern.</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Subject *</label>
-        <input class="form-control mb-2" 
-            type="text" 
-            required 
-            [(ngModel)]="email.subject" 
-            name="subject" 
-            #subject="ngModel" 
-            [ngClass]="subject.valid || subject.pristine ? '': 'bg-danger text-white'"
-            pattern="[a-zA-Z0-9. %+-_]{1,50}">
+  <div class="text-left">
+    <button
+      class="btn btn-primary btn-sm mr-1"
+      type="submit"
+      [disabled]="!emailForm.form.valid">
+      Create email
+    </button>
+  </div>
 
-        <div class="alert alert-danger" *ngIf="subject.touched && !subject.valid">
-            <div *ngIf="subject.errors.required">Sorry, a subject is required.</div>
-            <div *ngIf="subject.errors.pattern">The subject can't be longer than 50 characters.</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Body</label>
-        <input class="form-control mb-4" 
-            type="text"  
-            [(ngModel)]="email.body" 
-            name="body" 
-            #body="ngModel">
-    </div>
-
-    <div class="text-left">
-        <button 
-            class="btn btn-primary btn-sm mr-1" 
-            type="submit" 
-            [disabled]="!emailForm.form.valid">
-            Create email
-        </button>
-    </div>
-    
 </form>

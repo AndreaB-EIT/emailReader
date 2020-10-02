@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { EmailViewerComponent } from './email-viewer.component';
+import {EmailViewerComponent} from './email-viewer.component';
 
 describe('EmailViewerComponent', () => {
   let component: EmailViewerComponent;
@@ -8,9 +8,9 @@ describe('EmailViewerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmailViewerComponent ]
+      declarations: [EmailViewerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

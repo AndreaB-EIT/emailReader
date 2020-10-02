@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { email } from '../../interfaces/email';
-import { ViewChild } from '@angular/core';
-import { EmailManagementService } from 'src/app/services/email-management.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Email} from '../../interfaces/email';
+import {ViewChild} from '@angular/core';
+import {EmailManagementService} from 'src/app/services/email-management.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-email-form',
@@ -12,39 +12,42 @@ import { Router } from '@angular/router';
 
 export class EmailFormComponent implements OnInit {
 
-  email: email;
+  email: Email;
 
   @ViewChild('emailForm') emailForm: any;
 
   constructor(private EMS: EmailManagementService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
-    this.email = { id: 0, from: "", to: "", subject: "", body: ""};
+    this.email = {id: 0, from: '', to: '', subject: '', body: ''};
   }
 
   checkForDuplicates(id: number): boolean {
-    return this.EMS.findEmailInList(id) !== -1 ? true : false;
+    return (this.EMS.findEmailInList(id) !== -1);
   }
 
   firstAvailableId(): number {
-    for(let i: number = 0; i < this.EMS.emailsList.length; i++)
-      if(!this.checkForDuplicates(i))
+    for (let i = 0; i < this.EMS.emailsList.length; i++) {
+      if (!this.checkForDuplicates(i)) {
         return i;
+      }
+    }
   }
 
   submitEmail(): void {
-    let newEmail = {
+    const newEmail = {
       id: -2,
-      from: this.email.from, 
-      to: this.email.to, 
-      subject: this.email.subject, 
-      body: (this.email.body == "" ? "<no email body>" : this.email.body)
+      from: this.email.from,
+      to: this.email.to,
+      subject: this.email.subject,
+      body: (this.email.body === '' ? '<no email body>' : this.email.body)
     };
 
-    if(!this.checkForDuplicates(this.EMS.emailsList.length))
+    if (!this.checkForDuplicates(this.EMS.emailsList.length)) {
       newEmail.id = this.EMS.emailsList.length;
-    else {
+    } else {
       newEmail.id = this.firstAvailableId();
     }
 
