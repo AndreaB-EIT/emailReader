@@ -6,7 +6,7 @@ import { EmailFormComponent } from './components/email-form/email-form.component
 import { EmailsListComponent } from './components/emails-list/emails-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', redirectTo: '/emailsList', pathMatch: 'full' },
   { path: 'emailForm', component: EmailFormComponent },
   { path: 'emailViewer', component: EmailViewerComponent },
   { path: 'emailsList', component: EmailsListComponent },

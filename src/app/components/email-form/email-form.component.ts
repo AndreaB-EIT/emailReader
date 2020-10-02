@@ -20,17 +20,35 @@ export class EmailFormComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.email = {from: "", to: "", subject: "", body: ""};
+    this.email = { id: 0, from: "", to: "", subject: "", body: ""};
+  }
+
+  checkForDuplicates(id: number): boolean {
+    return this.EMS.findEmailInList(id) !== -1 ? true : false;
+  }
+
+  firstAvailableId(): number {
+    for(let i: number = 0; i < this.EMS.emailsList.length; i++)
+      if(!this.checkForDuplicates(i))
+        return i;
   }
 
   submitEmail(): void {
     let newEmail = {
+      id: -2,
       from: this.email.from, 
       to: this.email.to, 
       subject: this.email.subject, 
       body: (this.email.body == "" ? "<no email body>" : this.email.body)
     };
-    this.EMS.createEmail(newEmail);
+
+    if(!this.checkForDuplicates(this.EMS.emailsList.length))
+      newEmail.id = this.EMS.emailsList.length;
+    else {
+      newEmail.id = this.firstAvailableId();
+    }
+
+    this.EMS.addEmail(newEmail);
     this.emailForm.reset();
     this.router.navigate(['/emailsList']);
   }

@@ -19,7 +19,12 @@
     </div>
 
     <div>
-        <h5>Filters</h5>
+        <h5>Filter by words</h5>
+
+        <input  type="text"
+                [(ngModel)]="term"
+                name="term"
+                 />
     </div>
 
     <div>
@@ -29,7 +34,7 @@
     <div class="my-3">
         <table class="table table-striped">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th scope="col">ID</th>
                     <th scope="col">From</th>
                     <th scope="col">To</th>
@@ -46,24 +51,27 @@
             <tbody>
                 <!-- <tr *ngFor="let email of emailsList; index as i"> useful
                     <th scope="row">{{ i + 1 }}</th> -->
-                <tr *ngFor="let email of emailsList; index as i">
-                    <td>{{ i }}</td>
+                <tr     *ngFor="let email of emailsList | filter:term" 
+                        class="text-center">
+                    <td>{{ email.id }}</td>
                     <td>{{ email.from }}</td>
                     <td>{{ email.to }}</td>
                     <td>{{ email.subject }}</td>
                     <td>
-                        <button (click)="viewEmail(i)" class="btn btn-primary">
+                        <button (click)="viewEmail(email.id)" 
+                                class="btn btn-primary">
                             View email
                         </button>
                     </td>
                     <td class="bg-warning">
-                        <button (click)="deleteEmail(i)" class="btn btn-danger">
+                        <button (click)="deleteEmail(email.id)" 
+                                class="btn btn-danger">
                             Delete email
                         </button>
                     </td>
                     <!-- See above for an explanation of why this is here -->
                     <td>
-                        {{ i }}
+                        {{ email.id }}
                     </td>
                 </tr>
             </tbody>

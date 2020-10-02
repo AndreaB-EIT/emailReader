@@ -11,40 +11,18 @@ import { EmailManagementService } from 'src/app/services/email-management.servic
 export class EmailsListComponent implements OnInit {
 
   emailToView: email;
-  clearEmail: email;
   emailsList: email[];
   IDToDelete: number;
+  term: string;
 
   constructor(private router: Router,
               private EMS: EmailManagementService) { }
 
   ngOnInit(): void {
+    this.term = "";
     this.IDToDelete = 0;
-    this.clearEmail = {from: "", to: "", subject: "", body: ""};
+    this.emailsList = this.EMS.getAllEmails();
 
-    if(this.EMS.emailsList==undefined) {
-      this.EMS.emailsList = [];
-      this.emailsList = [];
-
-      this.emailsList.push(
-        { 
-          from: 'sender@a.aa', 
-          to: 'receiver@a.aa', 
-          subject: 'test subject', 
-          body: 'test body'
-        });
-  
-      this.emailsList.push(
-        { 
-          from: 'sender2@a.aa', 
-          to: 'receiver2@a.aa', 
-          subject: 'test subject 2', 
-          body: 'test body 2'
-        });
-    }
-    else this.emailsList = this.EMS.getAllEmails();
-     
-    this.EMS.emailsList = this.emailsList;
   }
 
   viewEmail(i: number): void {
@@ -52,8 +30,8 @@ export class EmailsListComponent implements OnInit {
     this.router.navigate(['/emailViewer']);
   }
 
-  deleteEmail(i: number): void {
-    this.EMS.deleteEmail(i);
+  deleteEmail(id: number): void {
+    this.EMS.deleteEmail(id);
   }
 
 }
