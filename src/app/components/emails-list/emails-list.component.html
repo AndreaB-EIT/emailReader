@@ -5,9 +5,9 @@
         <button class="btn btn-primary">
             <a [routerLink]="['/emailForm']" class="text-white">Compose email</a>
         </button>
-        <!--<input  type="number" 
-                min="0" 
-                [max]="emailsList.length-1" 
+        <!--<input  type="number"
+                min="0"
+                [max]="emailsList.length-1"
                 [(ngModel)]="IDToDelete"
                 name="IDToDelete"
                  />
@@ -24,7 +24,7 @@
         <input  type="text"
                 [(ngModel)]="term"
                 name="term"
-                 />
+        />
     </div>
 
     <div>
@@ -41,9 +41,9 @@
                     <th scope="col">Subject</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
-                    <!-- This redundancy grants better UX, since the user will 
+                    <!-- This redundancy grants better UX, since the user will
                         be able to make sure about deleting the right email,
-                        since the same table cell background color might cause 
+                        since the same table cell background color might cause
                         confusion -->
                     <th scope="col">ID</th>
                 </tr>
@@ -51,20 +51,20 @@
             <tbody>
                 <!-- <tr *ngFor="let email of emailsList; index as i"> useful
                     <th scope="row">{{ i + 1 }}</th> -->
-                <tr     *ngFor="let email of emailsList | filter:term" 
+                <tr     *ngFor="let email of emailsList | filter:term"
                         class="text-center">
                     <td>{{ email.id }}</td>
                     <td>{{ email.from }}</td>
                     <td>{{ email.to }}</td>
                     <td>{{ email.subject }}</td>
                     <td>
-                        <button (click)="viewEmail(email.id)" 
+                        <button (click)="viewEmail(email.id)"
                                 class="btn btn-primary">
                             View email
                         </button>
                     </td>
                     <td class="bg-warning">
-                        <button (click)="deleteEmail(email.id)" 
+                        <button (click)="deleteEmail(email.id)"
                                 class="btn btn-danger">
                             Delete email
                         </button>
