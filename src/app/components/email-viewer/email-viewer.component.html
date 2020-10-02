@@ -4,6 +4,7 @@
     <table class="table table-striped">
     <thead>
         <tr>
+            <th scope="col">ID</th>
             <th scope="col">From</th>
             <th scope="col">To</th>
         </tr>
@@ -12,6 +13,7 @@
         <!-- <tr *ngFor="let email of emailsList; index as i"> useful
             <th scope="row">{{ i + 1 }}</th> -->
         <tr>
+            <td>{{ emailToView.id }}</td>
             <td>{{ emailToView.from }}</td>
             <td>{{ emailToView.to }}</td>
         </tr>
