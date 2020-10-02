@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { email } from '../../interfaces/email';
 import { ViewChild } from '@angular/core';
+import { EmailManagementService } from 'src/app/services/email-management.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-email-form',
@@ -11,16 +13,14 @@ import { ViewChild } from '@angular/core';
 export class EmailFormComponent implements OnInit {
 
   email: email;
-  emailsList: email[];
 
   @ViewChild('emailForm') emailForm: any;
 
-  constructor() { }
+  constructor(private EMS: EmailManagementService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.email = {from: "", to: "", subject: "", body: ""};
-    this.emailsList = [];
-    
   }
 
   submitEmail(): void {
@@ -30,8 +30,9 @@ export class EmailFormComponent implements OnInit {
       subject: this.email.subject, 
       body: (this.email.body == "" ? "<no email body>" : this.email.body)
     };
-    this.emailsList.push(newEmail);
+    this.EMS.createEmail(newEmail);
     this.emailForm.reset();
+    this.router.navigate(['/emailsList']);
   }
 
 }
